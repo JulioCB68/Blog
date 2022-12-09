@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { GlobalStyles } from './assets/styles/GlobalStyles';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import * as path from './utils/routes';
+
+import { Home } from './pages/Home';
+import { TrendingTopics } from './pages/TrendingTopics';
+import { PostDescription } from './pages/PostDescription';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <BrowserRouter>
+        <Routes>
+          <Route path={path.HOME} element={<Home />} />
+          <Route path={path.TRENDING_TOPICS} element={<TrendingTopics />} />
+          <Route path={path.POSTDESCRIPTION} element={<PostDescription />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

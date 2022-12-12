@@ -5,9 +5,9 @@ import { posts } from '../../data/posts';
 
 import * as path from '../../utils/routes'
 
-import { FiUser, FiArrowLeft } from 'react-icons/fi';
+import { MdWest, MdOutlinePersonOutline } from "react-icons/md";
 
-import { Container, WrapperHeader, WrapperContent, AuthorContainer, Content, Title, Photo, Text } from './styles';
+import { Container, Hero, AuthorContainer, Content, Title, Photo, Text } from './styles';
 import { Link } from 'react-router-dom';
 
 export const PostDescription = () => {
@@ -22,33 +22,30 @@ export const PostDescription = () => {
     <>
       {data.map((item) => (
         <Container>
-          <WrapperHeader>
-            <AuthorContainer border color={item.tag.color}>
-              <div className='AuthorPhoto'>
-                <Photo><FiUser size={20} /></Photo>
-                <div className='AuthorInfo'>
-                  <Title> {item.author} </Title>
-                  {item.updatedAt.day && <Text color='#737380'> {item.updatedAt.mounth} {item.updatedAt.day} · 4 min read </Text>}
-                  {!item.updatedAt.day && <Text color='#737380'> {item.createdAt.mounth} {item.createdAt.day} · 3 min read </Text>}
-                </div>
+          <Hero>
+          <AuthorContainer>
+            <div className='AuthorPhoto'>
+              <Photo><MdOutlinePersonOutline size={26} /></Photo>
+              <div className='AuthorInfo'>
+                <Title> {item.author} </Title>
+                {item.updatedAt.day && <Text color='#737380'> {item.updatedAt.mounth} {item.updatedAt.day} · 4 min read </Text>}
+                {!item.updatedAt.day && <Text color='#737380'> {item.createdAt.mounth} {item.createdAt.day} · 3 min read </Text>}
               </div>
-              <Link to={path.HOME}>
-                <FiArrowLeft size={20} color="#000000" />
-              </Link>
-            </AuthorContainer>
+            </div>
+            <Link to={path.HOME}>
+              <MdWest size={24} color="#000000" />
+            </Link>
+          </AuthorContainer>
+            <h1> {item.title} </h1>
+          </Hero>
+          <Content>
             <img src={item.cover} alt='Post' />
-            <Content>
-              <h1> {item.title} </h1>
-              <div>
-                <h4> #{item.tag.title} </h4>
-                {item.trend_topics && <h4> #trending_topics </h4>}
-              </div>
-            </Content>
-          </WrapperHeader>
-
-          <WrapperContent>
+            <div className='HeroInfo'>
+              <h4> #{item.tag.title} </h4>
+              {item.trend_topics && <h4> #trending_topics </h4>}
+            </div>
             <Text> {item.post} </Text>
-          </WrapperContent>
+          </Content>
         </Container>
       ))}
     </>

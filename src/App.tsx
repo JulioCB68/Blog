@@ -6,6 +6,7 @@ import * as path from './utils/routes';
 import { Home } from './pages/Home';
 import { TrendingTopics } from './pages/TrendingTopics';
 import { PostDescription } from './pages/PostDescription';
+import Navbar from './components/Navbar';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
     <>
       <GlobalStyles />
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path={path.HOME} element={<Home />} />
           <Route path={path.TRENDING_TOPICS} element={<TrendingTopics />} />

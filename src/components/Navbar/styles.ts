@@ -8,17 +8,18 @@ export const Nav = styled.nav`
   background: #E5E5E5;
   padding: 0 20px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   .logo {
     padding: 15px 0;
+  }
+  @media only screen and (min-width: 1024px) { 
+    padding: 0 7rem;
   }
 `
 export const StyledBurger = styled.div<{ isNavExpanded: boolean }>`
   width: 2rem;
   height: 2rem;
-  position: fixed;
-  top: 15px;
-  right: 20px;
   z-index: 20;
   display: none;
   @media (max-width: 768px) {
@@ -75,9 +76,5 @@ export const StyledLink = styled(Link)`
   &:hover {
     transition: 300ms ease-in-out;
     color: #3485FF;
-  }
-
-  @media screen and (min-width: 1024px) {
-    padding: 1rem;
   }
 `;

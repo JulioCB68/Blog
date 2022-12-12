@@ -65,11 +65,37 @@ export const SubTilte = styled.p`
 `;
 
 export const PostContainer = styled.div`
-  margin: 2rem 0 0;
+  width: 100%;
+  padding: 2rem 0 0;
+
+
+  @media only screen and (min-width: 600px) { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  @media only screen and (min-width: 768px) { 
+    grid-template-columns: 1fr 1fr;
+  }
 
   @media only screen and (min-width: 1024px) { 
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media only screen and (min-width: 1300px) { 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @media only screen and (min-width: 1700px) { 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  @media only screen and (min-width: 2100px) { 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  @media only screen and (min-width: 2500px) { 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 `;

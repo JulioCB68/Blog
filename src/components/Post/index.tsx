@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 import { Post } from '../../@types/post';
 import { posts } from '../../data/posts';
 
-import { Container, Wrapper, Text, Title, Footer } from './styles';
-import { AuthorContainer, Photo } from '../../pages/PostDescription/styles';
+import { Container, Content, Text, Title } from './styles';
 
-import { FiArrowRight, FiUser } from 'react-icons/fi';
 import { limitString } from '../../utils/limitString';
 
 export const PostComponent = () => {
@@ -16,26 +14,23 @@ export const PostComponent = () => {
   return (
     <>
       {Allposts?.map((item) => (
-        <Container key={item.id} color={item.tag?.color}>
+        <Container key={item.id}>
           <Link to={`/post/${item.id}`}
             style={{ textDecoration: 'none', color: '#13131A' }}>
             <img src={item.cover} alt='post' />
-            <Wrapper>
-              <Text size=".75rem" color=""> #{item.tag?.title} </Text>
-              <Title> {limitString(item.title, 59)} </Title>
-            </Wrapper>
-            <Footer>
-              <AuthorContainer>
-                <div className='AuthorPhoto'>
-                  <Photo><FiUser size={20} /></Photo>
-                  <div className='AuthorInfo'>
-                    <Text size=".75rem" color=""> {item.author} </Text>
-                    <Text size=".75rem" color=""> {item.createdAt.mounth} {item.createdAt.day}, {item.createdAt.year} </Text>
-                  </div>
-                </div>
-              </AuthorContainer>
-              <FiArrowRight size={20} color="#13131A" />
-            </Footer>
+            <Content>
+              <div className='info'>
+                <Text size='.75rem'>{item.tag.title} ·</Text>
+                {item.updatedAt.day &&
+                  <Text size='.75rem'>{item.updatedAt.mounth} {item.updatedAt.day}, {item.updatedAt.year}</Text>
+                }
+                {!item.updatedAt.day &&
+                  <Text size='.75rem'>{item.createdAt.mounth} {item.createdAt.day}, {item.createdAt.year}</Text>
+                }
+              </div>
+              <Title> {limitString(item.title, 83)} </Title>
+              <Text> {limitString(item.post, 168)} </Text>
+            </Content>
           </Link>
         </Container>
       ))}

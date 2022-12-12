@@ -1,26 +1,35 @@
 import styled from 'styled-components';
 
-export const Container = styled.div<{ color: string }>`
-  background: #FFFFFF;
+export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   cursor: pointer;
   margin: 0 0 1rem;
   border-radius: .5rem;
-  border-left: 7px solid ${props => props.color};
 
   img {
-    border-radius: 0 .5rem 0 0;
+    border-radius: .25rem;
     width: 100%;
     height: 15rem;
     object-fit: cover;
   }
 
-  @media only screen and (min-width: 1024px) { 
-    width: 22.05rem;
-    height: 22rem;
-    margin: 0 2rem 3rem 0;
+  .info {
+    display: flex;
+
+    p {
+      padding: 0 .25rem 0 0;
+    }
+
+    p:first-child {
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+  }
+  @media only screen and (min-width: 768px) { 
+    /* min-width: 1024rem;
+    min-height: 22rem; */
     
     img {
       width: 100%;
@@ -33,8 +42,8 @@ export const Container = styled.div<{ color: string }>`
   }
 `;
 
-export const Wrapper = styled.div`
-  padding: 1rem 1rem;
+export const Content = styled.div`
+  padding: .5rem 0;
 `;
 
 export const Title = styled.h3`
@@ -47,7 +56,7 @@ export const Text = styled.p<{ size?: string, color?: string, capitalize?: boole
   font-weight: 400;
   font-size: ${props => props.size};
   text-transform: ${props => props.capitalize ? 'capitalize' : 'initial'};
-  background: ${props => props.color};
+  color: #737380;
 `;
 
 export const Footer = styled.div`

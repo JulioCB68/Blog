@@ -18,4 +18,5 @@ export const theme = {
   background: "linear-gradient(180deg, #374151 0%, #111827 100%);",
   title: "#FFFFFF",
   text: "rgba(255, 255, 255, 0.6);",
+  li: "#111827",
 }

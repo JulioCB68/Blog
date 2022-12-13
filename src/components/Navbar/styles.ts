@@ -108,7 +108,7 @@ export const Ul = styled.ul<{ isNavExpanded: boolean }>`
 
   @media (max-width: 1023px) {
     flex-flow: column nowrap;
-    background: ${(props) => props.theme.title};
+    background: ${(props) => props.theme.background};
     padding: 3rem .75rem 0;
     position: fixed;
     top: 0;

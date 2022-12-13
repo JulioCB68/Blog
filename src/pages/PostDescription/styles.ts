@@ -15,14 +15,13 @@ export const Container = styled.div`
   @media only screen and (min-width: 1024px) { 
     img {
       margin: -5rem 0 0;
-  }
+    }
   }
 `;
 
 export const Hero = styled.div`
   width: 100%;
   padding: 1rem 1rem;
-  background: #E5E5E5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,6 +32,7 @@ export const Hero = styled.div`
     width: 100%;
     padding: 1rem 0 5rem;
     text-align: center;
+    color: ${(props) => props.theme.title};
   }
 
   @media only screen and (min-width: 320px) { 
@@ -43,19 +43,22 @@ export const Hero = styled.div`
   }
   
   @media only screen and (min-width: 1024px) { 
-    padding: 0 7rem;
+    padding: 0 11.25rem;
     
     h1 {
       max-width: 60rem;
       padding: 1rem 0 10rem;
     }
   }
+
+  @media only screen and (min-width: 1500px) { 
+    padding: 0 20rem;
+  }
 `;
 
 export const Content = styled.div`
   width: 100%;
   text-align: left;
-  background: #FFFFFF;
   
   display: flex;
   flex-direction: column;
@@ -70,20 +73,23 @@ export const Content = styled.div`
     h4 {
       width: 100%;
       padding: 0 0.25rem 0;
-      opacity: 0.4;
       padding: 1rem .5rem 3rem 0;
-      
+      color: ${(props) => props.theme.text};
     }
   }
 
   @media only screen and (min-width: 1024px) { 
-    padding: 0 7rem 2rem;
+    padding: 0 11.25rem 2rem;
 
     p {
       max-width: 100rem;
       font-size: 1.25rem;
       font-weight: 300;
     }
+  }
+
+  @media only screen and (min-width: 1500px) { 
+    padding: 0 20rem;
   }
 `;
 
@@ -93,7 +99,6 @@ export const AuthorContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 0 3rem;
-  background: #E5E5E5;
 
   
   .AuthorPhoto {
@@ -128,15 +133,13 @@ export const Title = styled.p`
   font-weight: 400;
   line-height: 25px;
   text-transform: capitalize;
+  color: ${(props) => props.theme.title};
 `;
 
-export const Text = styled.p<{ color?: string }>`
+export const Text = styled.p<{ size?: boolean }>`
   font-weight: 400;
-  line-height: ${props => props.color ? 'initial' : '25px'};
+  line-height: ${props => props.size ? 'initial' : '25px'};
   text-transform: capitalize;
-  color: ${props => props.color ? props.color : 'initial'};
-  font-size: ${props => props.color ? '.75rem' : 'initial'};
-`;
-
-export const Footer = styled.div`
+  color: ${(props) => props.theme.text};
+  font-size: ${props => props.size ? '.75rem' : 'initial'};
 `;

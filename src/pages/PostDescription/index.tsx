@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Post } from '../../@types/post';
+import { Post } from '../../types/post';
 import { posts } from '../../data/posts';
 
 import * as path from '../../utils/routes'
@@ -28,12 +28,12 @@ export const PostDescription = () => {
               <Photo><MdOutlinePersonOutline size={26} /></Photo>
               <div className='AuthorInfo'>
                 <Title> {item.author} </Title>
-                {item.updatedAt.day && <Text color='#737380'> {item.updatedAt.mounth} {item.updatedAt.day} · 4 min read </Text>}
-                {!item.updatedAt.day && <Text color='#737380'> {item.createdAt.mounth} {item.createdAt.day} · 3 min read </Text>}
+                {item.updatedAt.day && <Text size={true}> {item.updatedAt.mounth} {item.updatedAt.day} · 4 min read </Text>}
+                {!item.updatedAt.day && <Text size={true}> {item.createdAt.mounth} {item.createdAt.day} · 3 min read </Text>}
               </div>
             </div>
             <Link to={path.HOME}>
-              <MdWest size={24} color="#000000" />
+              <MdWest size={24} color='#FFFFFF' />
             </Link>
           </AuthorContainer>
             <h1> {item.title} </h1>

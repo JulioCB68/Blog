@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Post } from '../../@types/post';
+import { Post } from '../../types/post';
 import { posts } from '../../data/posts';
 
 import { Container } from './styles';

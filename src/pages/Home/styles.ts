@@ -3,10 +3,13 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   padding: 1rem 1.5rem;
-  background: #E5E5E5;
 
   @media only screen and (min-width: 1024px) { 
-    padding: 0 7rem;
+    padding: 3rem 11.25rem;
+  }
+
+  @media only screen and (min-width: 1500px) { 
+    padding: 3rem 20rem;
   }
 `;
 
@@ -79,23 +82,15 @@ export const PostContainer = styled.div`
     grid-template-columns: 1fr 1fr;
   }
 
-  @media only screen and (min-width: 1024px) { 
+  @media only screen and (min-width: 1700px) { 
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  @media only screen and (min-width: 1300px) { 
+  @media only screen and (min-width: 2100px) { 
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  @media only screen and (min-width: 1700px) { 
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
-
-  @media only screen and (min-width: 2100px) { 
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
-
   @media only screen and (min-width: 2500px) { 
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 `;

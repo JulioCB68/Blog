@@ -1,4 +1,4 @@
-import { Tags } from '../@types/tag'
+import { Tags } from '../types/tag'
 
 export const tags: Tags = {
   development: { title: 'development', color: '#006699'},

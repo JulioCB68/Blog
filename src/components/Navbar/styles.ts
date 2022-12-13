@@ -1,28 +1,82 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Nav = styled.nav`
+export const Nav = styled.nav<{ isVisible: boolean }>`
   width: 100%;
   height: 55px;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-  background: #E5E5E5;
+  background: transparent;
   padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .logo {
-    padding: 15px 0;
+
+  .LogoContainer {
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    color: ${(props) => props.theme.title};
   }
+  
+  .Logo {
+    background: #4B5563;
+    border-radius: .25rem;
+    color: ${(props) => props.theme.title};
+    margin: 0 .25rem 0 0;
+  }
+
+  .SearchContainer {
+      display: ${props => props.isVisible ? 'flex' : 'none'};
+      width: 50%;
+      border: 1px solid ${(props) => props.theme.title};
+      border-radius: 1rem;
+      padding: .5rem 1rem .5rem 1rem;
+  }
+
+  .SearchIcon {
+    display: ${props => props.isVisible ? 'none' : 'flex'};
+    color: ${(props) => props.theme.title};
+  }
+
+  .SearchInput {
+      display: flex;
+      width: 100%;
+      color: ${(props) => props.theme.title};
+  }
+  
   @media only screen and (min-width: 1024px) { 
-    padding: 0 7rem;
+    padding: 0 11.25rem;
+
+    .SearchIcon {
+      display: none;
+    }
+
+    .SearchContainer {
+      width: 30%;
+      display: flex;
+    }
   }
-`
+
+  @media only screen and (min-width: 1500px) { 
+    padding: 0 20rem;
+  }
+`;
+
+export const SearchInput = styled.input`
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 0 0 .75rem;
+  background: transparent;
+  color: ${(props) => props.theme.title};
+`;
+
 export const StyledBurger = styled.div<{ isNavExpanded: boolean }>`
   width: 2rem;
   height: 2rem;
   z-index: 20;
   display: none;
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
@@ -30,7 +84,7 @@ export const StyledBurger = styled.div<{ isNavExpanded: boolean }>`
   div {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ isNavExpanded }) => isNavExpanded ? '#ccc' : '#333'};
+    background-color: ${({ isNavExpanded }) => isNavExpanded ? '#CCCCCC' : '#FFFFFF'};
     border-radius: 10px;
     transform-origin: 1px;
     transition: all 0.3s linear;
@@ -52,24 +106,24 @@ export const Ul = styled.ul<{ isNavExpanded: boolean }>`
   display: flex;
   flex-flow: row nowrap;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     flex-flow: column nowrap;
-    background-color: #FFFFFF;
+    background: ${(props) => props.theme.title};
+    padding: 3rem .75rem 0;
     position: fixed;
-    transform: ${({ isNavExpanded }) => isNavExpanded ? 'translateX(0)' : 'translateX(100%)'};
     top: 0;
-    right: 0;
+    left: ${({ isNavExpanded }) => isNavExpanded ? '0' : '-32rem'};
     height: 100vh;
     width: 250px;
-    transition: transform 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     li {
-      color: #fff;
+      color: ${(props) => props.theme.title};
     }
   }
 `;
 
 export const StyledLink = styled(Link)`
-  color: black;
+  color: ${(props) => props.theme.title};
   text-decoration: none;
   padding: 18px 10px;
 

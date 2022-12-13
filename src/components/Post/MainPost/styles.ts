@@ -35,19 +35,13 @@ export const Container = styled.div`
   }
   @media only screen and (min-width: 768px) { 
     img {
-      width: 100%;
-      object-fit: cover;
-      min-height: 10rem;
-      max-height: 10rem;
-      display: flex;
-      flex-wrap: wrap;
+      min-height: 15rem;
     }
 
     .Wrapper {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
     }
   }
 `;
@@ -66,5 +60,11 @@ export const Text = styled.p<{ size?: string, color?: string, capitalize?: boole
   font-weight: 400;
   font-size: ${props => props.size};
   text-transform: ${props => props.capitalize ? 'capitalize' : 'initial'};
+  color: ${(props) => props.theme.text};
+`;
+
+export const TextPost = styled.p`
+  height: 9.5rem;
+  overflow: hidden;
   color: ${(props) => props.theme.text};
 `;

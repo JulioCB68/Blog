@@ -31,7 +31,7 @@ export const Category = () => {
             </PostContainer>
           </>
           :
-          <Container height='100vh'>
+          <Container>
             <TagText> We couldn’t find any posts with the keyword " {tag} ". Please try another keyword. </TagText>
             <img src={Image} alt="No Result" />
           </Container>

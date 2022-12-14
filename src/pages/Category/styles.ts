@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div<{ height?: string }>`
+export const Container = styled.div`
   width: 100%;
-  height: ${props => props.height ? '100vh' : 'auto'};
+  min-height: 100vh;
   padding: 0 1.5rem;
   background: ${(props) => props.theme.background};
 
@@ -10,10 +10,6 @@ export const Container = styled.div<{ height?: string }>`
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-
-  @media only screen and (min-width: 1024px) { 
-    justify-content: center;  
-  }
 
   @media only screen and (min-width: 1500px) { 
     padding: 0 20rem;

@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import * as path from './utils/routes';
 
 import { Home } from './pages/Home';
-import { TrendingTopics } from './pages/TrendingTopics';
+import { Category } from './pages/Category';
 import { PostDescription } from './pages/PostDescription';
 import Navbar from './components/Navbar';
 import { ThemeProvider } from 'styled-components';
@@ -18,7 +18,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path={path.HOME} element={<Home />} />
-            <Route path={path.TRENDING_TOPICS} element={<TrendingTopics />} />
+            <Route path={path.CATEGORY} element={<Category />} />
             <Route path={path.POSTDESCRIPTION} element={<PostDescription />} />
           </Routes>
         </ThemeProvider>

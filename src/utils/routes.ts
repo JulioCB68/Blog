@@ -1,3 +1,3 @@
 export const HOME = "/";
 export const POSTDESCRIPTION = "/post/:id";
-export const TRENDING_TOPICS = "/trending-topics";
+export const CATEGORY = "/category/:tag";

@@ -10,10 +10,11 @@ import { limitString } from '../../../utils/limitString';
 import { Container, Content, Text, TextPost, Title } from './styles';
 
 export const MainPost = () => {
-  const [Allposts, setAllPosts] = useState<Post[]>(posts)
+  const [Allposts, setAllPosts] = useState<Post[]>(posts);
 
-  const filterTrendingTopics = Allposts.filter((post) => post.id === '20')
+  const randomId = String(Math.floor(Math.random() * 21))
 
+  const filterTrendingTopics = Allposts.filter((post) => post.id === randomId);
 
   return (
     <>

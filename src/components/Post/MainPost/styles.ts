@@ -35,15 +35,35 @@ export const Container = styled.div`
   }
   @media only screen and (min-width: 768px) { 
     img {
-      min-height: 15rem;
-    }
-
-    .Wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      min-width: 25rem;
+      min-height: 25rem;
     }
   }
+
+  @media only screen and (min-width: 1024px) { 
+    img {
+      min-width: 35rem;
+      min-height: 30rem;
+    }
+    .Wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+  }
+
+  @media only screen and (min-width: 1700px) { 
+    img {
+      min-width: 45rem;
+      min-height: 30rem;
+    }
+    .Wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+  }
+
 `;
 
 export const Content = styled.div`
@@ -67,4 +87,8 @@ export const TextPost = styled.p`
   height: 9.5rem;
   overflow: hidden;
   color: ${(props) => props.theme.text};
+
+  @media only screen and (min-width: 768px) { 
+    height: 25rem;
+  }
 `;

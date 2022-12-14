@@ -21,7 +21,7 @@ export const PostDescription = () => {
   return (
     <>
       {data.map((item) => (
-        <Container>
+        <Container key={item.id}>
           <Hero>
           <AuthorContainer>
             <div className='AuthorPhoto'>
@@ -40,10 +40,6 @@ export const PostDescription = () => {
           </Hero>
           <Content>
             <img src={item.cover} alt='Post' />
-            <div className='HeroInfo'>
-              <h4> #{item.tag.title} </h4>
-              {item.trend_topics && <h4> #trending_topics </h4>}
-            </div>
             <Text> {item.post} </Text>
           </Content>
         </Container>

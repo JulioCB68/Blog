@@ -7,15 +7,9 @@ export const Container = styled.div`
   img {
     width: 100%;
     border-radius: .5rem;
-    margin: -4rem 0 0;
     max-width: 81.125rem;
     max-height: 50.5rem;
-  }
-
-  @media only screen and (min-width: 1024px) { 
-    img {
-      margin: -5rem 0 0;
-    }
+    margin: 0 0 3rem;
   }
 `;
 
@@ -47,7 +41,6 @@ export const Hero = styled.div`
     
     h1 {
       max-width: 60rem;
-      padding: 1rem 0 10rem;
     }
   }
 
@@ -142,4 +135,5 @@ export const Text = styled.p<{ size?: boolean }>`
   text-transform: capitalize;
   color: ${(props) => props.theme.text};
   font-size: ${props => props.size ? '.75rem' : 'initial'};
+  padding: 0 0 2rem;
 `;

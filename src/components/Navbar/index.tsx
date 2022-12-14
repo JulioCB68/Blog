@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const handleKeyUp = (e: KeyboardEvent) => {
     if (e.key === 'Enter' && inputText !== '') {
-      navigate("/trending-topics")
+      navigate(`/category/${inputText}`)
       setInputText('');
     }
   }
@@ -36,8 +36,8 @@ const Navbar = () => {
         <div />
         <div />
       </StyledBurger>
-      <div className='LogoContainer'>
-        <GoBold size={30} onClick={() => navigate("/")} className='Logo' />
+      <div className='LogoContainer' onClick={() => navigate("/")}>
+        <GoBold size={30} className='Logo'/>
         MyBlog
       </div>
       <div className='SearchContainer'>
@@ -45,7 +45,7 @@ const Navbar = () => {
           <GoSearch size={20} />
           <SearchInput
             type="text"
-            placeholder="Pesquise pelo assunto desejado..."
+            placeholder="Search"
             value={inputText}
             onChange={e => setInputText(e.target.value)}
             onKeyUp={handleKeyUp}

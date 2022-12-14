@@ -4,10 +4,6 @@ export const Container = styled.div`
   width: 100%;
   padding: 1rem 1.5rem;
 
-  @media only screen and (min-width: 1024px) { 
-    padding: 3rem 11.25rem;
-  }
-
   @media only screen and (min-width: 1500px) { 
     padding: 3rem 20rem;
   }

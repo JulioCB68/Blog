@@ -45,8 +45,6 @@ export const Nav = styled.nav<{ isVisible: boolean }>`
   }
   
   @media only screen and (min-width: 1024px) { 
-    padding: 0 11.25rem;
-
     .SearchIcon {
       display: none;
     }
@@ -69,6 +67,10 @@ export const SearchInput = styled.input`
   padding: 0 0 0 .75rem;
   background: transparent;
   color: ${(props) => props.theme.title};
+
+  ::placeholder {
+    color: ${(props) => props.theme.text};
+  }
 `;
 
 export const StyledBurger = styled.div<{ isNavExpanded: boolean }>`
